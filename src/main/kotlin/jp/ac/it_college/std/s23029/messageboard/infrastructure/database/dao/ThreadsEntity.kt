@@ -10,6 +10,7 @@ class ThreadsEntity(id: EntityID<Long>) : LongEntity(id){
 
     var title by ThreadsTable.title
     var userId by UsersEntity referencedOn ThreadsTable.userId
+    var createdBy by UsersEntity referencedOn ThreadsTable.createdBy
     var createdAt by ThreadsTable.createdAt
     var updatedAt by ThreadsTable.updatedAt
     var deleted by ThreadsTable.deleted
@@ -19,6 +20,7 @@ class ThreadsEntity(id: EntityID<Long>) : LongEntity(id){
             id.value,
             title,
             userId.id.value,
+            createdBy.toUserInfo(),
             createdAt,
             updatedAt,
             deleted
