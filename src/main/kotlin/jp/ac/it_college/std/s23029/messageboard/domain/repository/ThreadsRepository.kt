@@ -4,7 +4,7 @@ import jp.ac.it_college.std.s23029.messageboard.domain.model.Threads
 
 
 interface ThreadsRepository {
-    fun createThread(thread: Threads)
+    fun createThread(thread: Threads): Threads
 
     fun getThreadById(id: Long): Threads?
 
